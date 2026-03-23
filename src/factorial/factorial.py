@@ -21,13 +21,21 @@ def factorial(num):
         return fact 
 
 num = None
+min = 4
+max = 8
 
 if len(sys.argv) == 1:
     while num is None or num == "":
-        num = input("Ingrese un numero: ")
+        num = input(f"Ingrese un numero entre {min} y {max}: ")
     num = int(num)
 else:
     num = int(sys.argv[1])
 
+if num < min or num > max:
+    print(f"El numero ingresado debe estar entre {min} y {max}")
+    sys.exit()
+
+print("Factorial ",min,"! es ", factorial(min))
 print("Factorial ",num,"! es ", factorial(num))
+print("Factorial ",max,"! es ", factorial(max))
 
